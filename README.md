@@ -47,3 +47,10 @@ print(my_shortcut)
 ```
 empty
 ```
+
+## Install lib
+You can install the lib via [pip](https://en.wikipedia.org/wiki/Pip_(package_manager))
+
+```sh
+pip install git+https://github.com/Tch1b0/LinkShort-python-lib.git#egg=LinkShort
+```
