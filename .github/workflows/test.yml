@@ -1,6 +1,6 @@
 name Test lib
 
-on: [ push ]
+on: push
 
 jobs:
   Test:
