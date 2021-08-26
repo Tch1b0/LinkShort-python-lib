@@ -31,13 +31,13 @@ class TestLinker(unittest.TestCase):
             
             l = LinkShort.Linker.create("https://example.com")
 
-            self.assertFalse(l.original())
+            self.assertFalse(l.is_original())
 
             m.post(f"{url}create", json={"short": "1234", "token": "4321"})
 
             l = LinkShort.Linker.create("https://example.com")
 
-            self.assertTrue(l.original())
+            self.assertTrue(l.is_original())
 
     def test_secure(self):
         with requests_mock.Mocker() as m:
@@ -45,12 +45,12 @@ class TestLinker(unittest.TestCase):
             
             l = LinkShort.Linker.create("http://example.com")
 
-            self.assertFalse(l.secure())
+            self.assertFalse(l.is_secure())
 
             m.post(f"{url}create", json={"short": "1234", "token": "4321"})
 
             l = LinkShort.Linker.create("https://example.com")
 
-            self.assertTrue(l.secure())
+            self.assertTrue(l.is_secure())
 
 unittest.main()
