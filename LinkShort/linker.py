@@ -99,19 +99,19 @@ class Linker:
         resp = requests.get(f"{url}{self.__short}")
         self.__link = resp.url
 
-    def original(self) -> bool:
+    def is_original(self) -> bool:
         """
         Is this object the original creator of the shortcut?
         """
         return not self.__token == ""
 
-    def secure(self) -> bool:
+    def is_secure(self) -> bool:
         """
         Does the destination link have a SSL certificate?
         """
         return self.__link.startswith("https")
 
-    def empty(self) -> bool:
+    def is_empty(self) -> bool:
         """
         Does this object still contain information?
         """
